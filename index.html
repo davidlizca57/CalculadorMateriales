@@ -11,25 +11,26 @@
     <meta name="author" content="Nombre del estudiante">
     <link rel="shortcut icon" href="img/icon.png">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-    <header>
+    <main class="Contenido_Principal">
+        <section class="Login">
+            <form>
+                <h1>Iniciar sesion</h1>
+                <p>Ingrese sus datos para proceder</p>
 
-        <img class="logo" src="img/icon.png" alt="Logo del proyecto">
+                <label for="usuario">Ingrese su usuario o correo</label>
+                <input type="text" id="usuario" placeholder="usuario o email">
 
-        <h1>Nombre del proyecto</h1>
+                <label for="contraseña">Ingrese su contraseña</label>
+                <input type="password" id="password" placeholder="contraseña">
 
-    </header>
-
-    <main>
+                <button type="submit">Ingresar</button>
+            </form>
+        </section>
     </main>
-
-    <footer>
-    </footer>
-
 </body>
 
 </html>
