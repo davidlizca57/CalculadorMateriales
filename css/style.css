@@ -1,0 +1,27 @@
+/*Documento para el stilo de pagina, David Lizcano Andrade*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color:rgb(212, 212, 212);
+}
+
+header{
+    width: 100vw;
+    height: 10vw;
+    background-color: rgb(221, 109, 109);
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo {
+    width: 4vw;
+    background-color:azure;
+    border-radius: 50%;
+}
+
