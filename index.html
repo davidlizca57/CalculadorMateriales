@@ -8,27 +8,44 @@
     <title>Calculador de materiales</title>
     <meta name="description" content="Descripción de la página">
     <meta name="keywords" content="FET, Interfaces, proyecto">
-    <meta name="author" content="Nombre del estudiante">
+    <meta name="author" content="David Lizcano">
     <link rel="shortcut icon" href="img/icon.png">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
+
+    <!--Inicio de sesion-->
     <main class="Contenido_Principal">
         <section class="Login">
             <form>
                 <h1>Iniciar sesion</h1>
-                <p>Ingrese sus datos para proceder</p>
+                <p style="color: gray;">Ingrese sus datos para proceder.</p>
 
                 <label for="usuario">Ingrese su usuario o correo</label>
-                <input type="text" id="usuario" placeholder="usuario o email">
+                <input type="text" id="usuario" placeholder="usuario o email" required>
 
                 <label for="contraseña">Ingrese su contraseña</label>
-                <input type="password" id="password" placeholder="contraseña">
+            <div class="grupo-password">
+                <input type="password" id="password" placeholder="contraseña" required>
+                <span class="eye" id="eye">&#x1F441</span>
+            </div>
+
+                <p>¿No tiene cuenta?</p><a href="#">Registrese</a>
 
                 <button type="submit">Ingresar</button>
             </form>
+        </section>
+
+        <!--Bienvenida-->
+        <section class="bienvenida">
+            <div class="titulo_bienvenida">
+                <p>Bienvenido al calculador de materiales</p>
+            </div>
+            <div class="icon-imagen">
+                <img src="img/icon.png" alt="Icono de ladrillo bienvenida">
+            </div>
         </section>
     </main>
 </body>

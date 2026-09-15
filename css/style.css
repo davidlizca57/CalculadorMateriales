@@ -1,2 +1,101 @@
 /*Documento para el stilo de pagina, David Lizcano Andrade*/
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Contenido_Principal{
+    display: flex; /*Pone las dos columnas de frente*/
+    justify-content: space-around; /*Separar parte rosada del icono de ladrillos*/
+    align-items: center; /*Centrar ambos lados veticalmente para que queden alineados*/
+    min-height: 100vh; /*Hace que la pantalle ocupe todo el alto del monitos*/
+    padding: 40px;
+}
+
+.Login{
+    background-color: #ffb3b3;
+    width: 400px;
+    padding: 40px 30px;
+    font-family: Bahnschrift;
+    font-size: 20px;
+}
+
+.titulo_bienvenida{
+    background-color: #565252;
+    width: 480px;
+    padding: 30px 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-family: Bahnschrift;
+    font-size: 35px;
+    color: white;
+}
+
+.bienvenida{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+
+input{
+    font-size: 20px;
+    font-family: Bahnschrift;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+}
+
+.grupo-password{
+    position: relative;
+    width: 100%;
+}
+
+.grupo-password input{
+    width: 100%;
+    padding-right: 45px;
+}
+
+.eye{
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+button{
+    font-family: Bahnschrift;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #111827;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.icon-imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.icon-imagen img{
+    width: 200px;
+    height: auto;
+    margin-top: 50px;
+}
