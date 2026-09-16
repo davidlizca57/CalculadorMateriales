@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.icon-imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.icon-imagen img{
+    width: 100px;
+    height: auto;
+    margin-top: 50px;
+}
+
+.Contenido-recuperacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 40px;
+}
+
+.Recovery{
+    background-color: #fc9559;
+    width: 700px;
+    padding: 40px 30px;
+    font-family: Bahnschrift;
+    font-size: 16px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+form h1{
+    text-align: center;
+}
+
+input{
+    font-size: 15px;
+    font-family: Bahnschrift;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+}
+
+/*LOGIN*/
+p a{
+    color: #327fc7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+p a:active{
+    color: darkred;
+}
+
+/*BOTON*/
+button{
+    font-family: Bahnschrift;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #5800bd;
+    padding: 12px;
+    cursor: pointer;
+}
+
+button:hover{
+    color: rgb(255, 0, 200);
+}
+
+button:active{
+    color: rgb(112, 19, 89);
+}

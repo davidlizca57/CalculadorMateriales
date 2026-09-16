@@ -18,7 +18,7 @@
     width: 400px;
     padding: 40px 30px;
     font-family: Bahnschrift;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .titulo_bienvenida{
@@ -49,6 +49,7 @@ form{
     margin: auto;
 }
 
+/*INPUTS*/
 input{
     font-size: 20px;
     font-family: Bahnschrift;
@@ -76,6 +77,23 @@ input{
     font-size: 20px;
 }
 
+/*REGISTER & FORGET PASSWORD*/
+p a{
+    color: #3e92e0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+p a:active{
+    color: darkred;
+}
+
+/*BOTON*/
 button{
     font-family: Bahnschrift;
     font-size: 20px;
@@ -87,6 +105,15 @@ button{
     cursor: pointer;
 }
 
+button:hover{
+    color: cyan;
+}
+
+button:active{
+    color: greenyellow;
+}
+
+/*ICONO*/
 .icon-imagen{
     display: flex;
     justify-content: center;
