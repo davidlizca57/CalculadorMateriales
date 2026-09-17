@@ -11,7 +11,7 @@
     color: white;
     padding: 15px 40px;
     display: flex;
-    justify-content: space-between; /*Manda el saludo a la izquierda*/
+    justify-content: space-between;
     align-items: center;
     font-family: Bahnschrift;
     font-size: 22px;
