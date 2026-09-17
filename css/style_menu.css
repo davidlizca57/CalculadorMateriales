@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*BARRA SUPERIOR*/
+.barra-superior{
+    background-color: #5c4033;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between; /*Manda el saludo a la izquierda*/
+    align-items: center;
+    font-family: Bahnschrift;
+    font-size: 22px;
+}
+
+.icon-user{
+    font-size: 30px;
+    background-color: #795548;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-principal{
+    background-color: #f3f4f6;
+    min-height: calc(100vh - 60px); /*Ocupar el resto de pantlla evitando el header*/
+    padding: 40px;
+    font-family: Bahnschrift;
+}
+
+.encabezado-menu{
+    margin-bottom: 30px;
+}
+
+.encabezado-menu h1{
+    color: #111827;
+    margin-bottom: 5px;
+}
+
+.contenedor-gris{
+    background-color: #d1d5db;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 1100px; /*Limitacion del contenedor*/
+    margin: 0 auto;
+}
+
+
+
+.menu-opciones{
+    display: grid; /* Crea columnas*/
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /*Recordatorio para mi esta ayuda separa lijeramente*/
+    max-width: 1000px; /*Evitar que se evite de forma extraña*/
+}
+
+/*Estilo para todas las tarjetas*/
+.tarjeta-opcion{
+    background-color: white;
+    text-decoration: none;
+    color: #111827;
+    padding: 20px;
+    border-radius: 12px;
+    display:flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /*una sombra epica*/
+    transition: transform 0.2s; /*un movimiento suave pa que se ve bonito*/
+}
+
+.icono-tarjeta{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0; /*evitar que el icono aplaste el texto*/
+
+}
+
+/*Mas efectos*/
+
+/*Efecto para la tarjeta se levante un poco*/
+.tarjeta-opcion:hover{
+    transform: translateY(-3px); /*Este es el efecto que hace que hace que se levante*/
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1)
+}
+
+/*El texto interno de la tarjeta ocupará todo el espacio para empujar la flecha*/
+.texto-tarjeta{
+    flex-grow: 1;
+}
+
+.texto-tarjeta p{
+    color: gray;
+    font-size: 14px;
+}
+
+.flecha {
+    color: #9ca3af;
+    font-size: 18px;
+
+}
