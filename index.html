@@ -23,19 +23,17 @@
                 <h1>Iniciar sesion</h1>
                 <p style="color: gray;">Ingrese sus datos para proceder.</p>
 
-                <label for="usuario">Ingrese su usuario o correo:</label>
-                <input type="text" id="usuario" placeholder="usuario o email" required>
+                <input type="text" id="usuario" placeholder="Usuario o email" maxlength="50" minlength="4" title="Ingrese nombre de usuario o correo" pattern="^[a-zA-Z0-9_]{3,15}$|^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required> <!-- pattern="^[a-zA-Z0-9_]{3,15}$ (Usuario de 3-15 letras/números/_) | (u) ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ (Correo válido)" -->
 
-                <label for="contraseña">Ingrese su contraseña:</label>
             <div class="grupo-password">
-                <input type="password" id="password" placeholder="contraseña" required>
+                <input type="password" id="password" placeholder="Contraseña" maxlength="25" minlength="8" title="Introduzca su contraseña" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?&quot;:{}|<>_+\-=\[\]\\\/])[A-Za-z\d!@#$%^&*(),.?&quot;:{}|<>_+\-=\[\]\\\/]{8,25}$" required> <!-- REGLA CONTRASEÑA: (?=.*\d) (obliga mínimo un número) (?=.*[a-z]) (obliga una minúscula) (?=.*[A-Z]) (obliga una mayúscula) (?=.*[!@#$%^&*(),.?":{}|<>_+\-=\[\]\\\/]) (obliga un carácter especial) [A-Za-z\d!@#$%^&*(),.?":{}|<>_+\-=\[\]\\\/]{8,25} (permite combinar todos de 8 a 25 caracteres) -->
                 <span class="eye" id="eye">&#x1F441</span>
             </div>
 
                 <p>¿No tiene cuenta?<a href="registro.html"> Registrese</a></p>
                 <p>¿Se le olvido la contraseña?<a href="recuperacion.html"> Recuperar </a></p>
 
-                <button type="submit">Ingresar</button>
+                <input class="btn" type="submit" name="Inciar sesion" name="entrar" value="Enviar">
             </form>
         </section>
 

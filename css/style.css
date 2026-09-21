@@ -9,7 +9,7 @@
     display: flex; /*Pone las dos columnas de frente*/
     justify-content: space-around; /*Separar parte rosada del icono de ladrillos*/
     align-items: center; /*Centrar ambos lados veticalmente para que queden alineados*/
-    min-height: 100vh; /*Hace que la pantalle ocupe todo el alto del monitos*/
+    min-height: 100vh; /*Hace que la pantalle ocupe todo el alto del monitor*/
     padding: 40px;
 }
 
@@ -94,7 +94,7 @@ p a:active{
 }
 
 /*BOTON*/
-button{
+.btn{
     font-family: Bahnschrift;
     font-size: 20px;
     border: none;
@@ -105,11 +105,12 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+.btn:hover{
     color: cyan;
+    background-color: orangered;
 }
 
-button:active{
+.btn:active{
     color: greenyellow;
 }
 
