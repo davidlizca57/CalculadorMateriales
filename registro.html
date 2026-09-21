@@ -19,23 +19,19 @@
         <section class="Register">
             <form action="index.html">
                 <h1>Registrarse</h1>
-                <p>Ingrese sus datos para poder registrarlo.</p>
+                <p style="color: grey;">Ingrese sus datos para poder registrarlo.</p>
 
-                <label for="nuevo_usuario">Nombre de usuario:</label>
-                <input type="text" id="nuevo_usuario" placeholder="Primer nombre de usuario" required>
+                <input type="text" id="nuevo_usuario" placeholder="Nombre de usuario" maxlength="50" minlength="4" title="Ingrese nombre de usuario de 3 a 15 caracteres (solo letras, números o _)" pattern="^[a-zA-Z0-9_]{3,15}$" required>
 
-                <label for="email">Correo al cual vincuar al usuario:</label>
-                <input type="email" id="email" placeholder="Correo">
+                <input type="email" id="email" placeholder="Correo al cual vincular al usuario" title="Ingrese un correo electrónico válido" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
 
-                <label for="password">Ingrese una contraseña:</label>
-                <input type="password" id="password" placeholder="Contraseña">
+                <input type="password" id="password" placeholder="Ingrese una contraseña" maxlength="25" minlength="8" title="La contraseña debe tener de 8 a 25 caracteres, incluir mínimo una mayúscula, una minúscula, un número y un carácter especial" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?&quot;:{}|<>_+\-=\[\]\\\/])[A-Za-z\d!@#$%^&*(),.?&quot;:{}|<>_+\-=\[\]\\\/]{8,25}$" required>
 
-                <label for="confirm-password">Confirme su contraseña:</label>
-                <input type="password" id="confirm-password" placeholder="Repetir contraseña">
+                <input type="password" id="confirm-password" placeholder="Repetir contraseña" maxlength="25" minlength="8" title="Repita la contraseña exactamente igual" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?&quot;:{}|<>_+\-=\[\]\\\/])[A-Za-z\d!@#$%^&*(),.?&quot;:{}|<>_+\-=\[\]\\\/]{8,25}$" required>
 
                 <p>¿Ya tiene cuenta? <a href="index.html">Iniciar sesion</a></p>
 
-                <button type="submit">Registrarse</button>
+                <input type="submit" value="Registrarse" class="btn-enviar">
             </form>
         </section>
     </main>

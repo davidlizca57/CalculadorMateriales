@@ -71,7 +71,7 @@ p a:active{
 }
 
 /*BOTON*/
-button{
+.btn-enviar{
     font-family: Bahnschrift;
     font-size: 18px;
     border: none;
@@ -82,10 +82,11 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+.btn-enviar:hover{
     color: rgb(255, 0, 200);
+    background-color: aquamarine;
 }
 
-button:active{
-    color: rgb(112, 19, 89);
+.btn-enviar:active{
+    color: rgb(38, 194, 32);
 }

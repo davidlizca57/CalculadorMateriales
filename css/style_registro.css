@@ -24,7 +24,7 @@
 form{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 18px;
     max-width: 1000px;
     margin: auto;
 }
@@ -32,6 +32,7 @@ form{
 form h1{
     text-align: center;
     color: mediumslateblue;
+    margin-bottom: 5px;
 }
 
 /*INPUTS*/
@@ -41,6 +42,7 @@ input{
     padding: 15px;
     border: none;
     border-radius: 8px;
+    width: 100%;
 }
 
 /*LOGIN*/
@@ -60,7 +62,7 @@ p a:active{
 }
 
 /*BOTON*/
-button{
+.btn-enviar{
     font-family: Bahnschrift;
     font-size: 18px;
     border: none;
@@ -69,12 +71,14 @@ button{
     background-color: #5800bd;
     padding: 12px;
     cursor: pointer;
+    width: 100%;
 }
 
-button:hover{
+.btn-enviar:hover{
     color: rgb(255, 123, 0);
+    background-color: blueviolet;
 }
 
-button:active{
+.btn-enviar:active{
     color: rgb(112, 19, 19);
 }
