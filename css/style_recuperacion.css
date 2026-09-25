@@ -34,6 +34,13 @@
     font-size: 16px;
 }
 
+#mensaje-alerta {
+    font-weight: Bahnschrift;
+    margin-bottom: 15px;
+    display: none;
+    text-align: center;
+}
+
 form{
     display: flex;
     flex-direction: column;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcular las vigas</title>
+    <meta name="author" content="David Lizcano">
+    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/style_CalViga.css">
+</head>
+<body>
+
+    <!-- barra superior en tono cafe -->
+    <header class="barra-cafe">
+        <a href="menu.html" class="btn-atras">&#x2190;</a>
+        <img src="img/iconViga.png" alt="Icono viga" class="icono-encabezado">
+        <h1>Calcular las vigas</h1>
+    </header>
+
+    <!-- panel principal de trabajo -->
+    <main class="contenedor-calculo">
+        
+        <!-- seccion izquierda: inputs de datos -->
+        <section class="bloque-datos">
+            <h2>Datos de las vigas</h2>
+            <form id="formulario-viga">
+                
+                <label class="etiqueta" for="largo">Largo de la viga (m)</label>
+                <input type="number" id="largo" step="0.01" placeholder="0" required>
+
+                <input type="submit" value="Calcular materiales" class="btn-calcular">
+            </form>
+        </section>
+
+        <!-- seccion derecha: cuadro gris de resultados -->
+        <section class="bloque-resultados">
+            <h2>Resultados</h2>
+            <div class="tarjeta-gris-resultados">
+                <p class="titulo-cafe-tabla">Materiales necesarios</p>
+                
+                <div class="fila-resultado">
+                    <span>Cemento</span>
+                    <strong id="res-cemento">0,0 Kg</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Arena</span>
+                    <strong id="res-arena">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Piedra</span>
+                    <strong id="res-piedra">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Hierro 8 mm</span>
+                    <strong id="res-hierro8">0,0 m</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Hierro 4 mm (estribos)</span>
+                    <strong id="res-hierro4">0,00 m</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- controlador logico -->
+    <script src="scrips/Script_CalViga.js"></script>
+</body>
+</html>

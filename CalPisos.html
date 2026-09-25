@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcular pisos</title>
+    <meta name="author" content="David Lizcano">
+    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/style_CalPisos.css">
+</head>
+<body>
+
+    <!-- barra superior en tono morado -->
+    <header class="barra-morada">
+        <a href="menu.html" class="btn-atras">&#x2190;</a>
+        <img src="img/iconPiso.png" alt="Icono pisos" class="icono-encabezado">
+        <h1>Calcular pisos</h1>
+    </header>
+
+    <!-- panel principal de trabajo -->
+    <main class="contenedor-calculo">
+        
+        <!-- seccion izquierda: inputs de datos -->
+        <section class="bloque-datos">
+            <h2>Datos de pisos</h2>
+            <form id="formulario-pisos">
+                
+                <label class="etiqueta" for="ancho">Ancho (m)</label>
+                <input type="number" id="ancho" step="0.1" placeholder="0,0" required>
+
+                <label class="etiqueta" for="largo">Largo (m)</label>
+                <input type="number" id="largo" step="0.1" placeholder="0,0" required>
+
+                <input type="submit" value="Calcular materiales" class="btn-calcular">
+            </form>
+        </section>
+
+        <!-- seccion derecha: cuadro gris de resultados -->
+        <section class="bloque-resultados">
+            <h2>Resultados</h2>
+            <div class="tarjeta-gris-resultados">
+                <p class="titulo-morado-tabla">Materiales necesarios</p>
+                
+                <div class="fila-resultado">
+                    <span>Superficie del piso</span>
+                    <strong id="res-superficie">0,00 m²</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Superficie con 10% extra</span>
+                    <strong id="res-extra">0,00 m²</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Cantidad de pisos</span>
+                    <strong id="res-cantidad">0,00 m²</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- controlador logico -->
+    <script src="scrips/Script_CalPisos.js"></script>
+</body>
+</html>

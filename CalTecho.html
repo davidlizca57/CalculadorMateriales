@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcular el techo</title>
+    <meta name="author" content="David Lizcano">
+    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/style_CalTecho.css">
+</head>
+<body>
+
+    <!-- barra superior en tono azul -->
+    <header class="barra-azul">
+        <a href="menu.html" class="btn-atras">&#x2190;</a>
+        <img src="img/iconTecho.png" alt="Icono techo" class="icono-encabezado">
+        <h1>Calcular el techo</h1>
+    </header>
+
+    <!-- panel principal de trabajo -->
+    <main class="contenedor-calculo">
+        
+        <!-- seccion izquierda: inputs de datos -->
+        <section class="bloque-datos">
+            <h2>Datos del techo</h2>
+            <form id="formulario-techo">
+                
+                <label class="etiqueta" for="espesor">Espesor (m)</label>
+                <input type="number" id="espesor" step="0.01" placeholder="0,00" required>
+
+                <label class="etiqueta" for="largo">Largo (m)</label>
+                <input type="number" id="largo" step="0.1" placeholder="0,0" required>
+
+                <label class="etiqueta" for="ancho">Ancho (m)</label>
+                <input type="number" id="ancho" step="0.1" placeholder="0,0" required>
+
+                <input type="submit" value="Calcular materiales" class="btn-calcular">
+            </form>
+        </section>
+
+        <!-- seccion derecha: cuadro gris de resultados -->
+        <section class="bloque-resultados">
+            <h2>Resultados</h2>
+            <div class="tarjeta-gris-resultados">
+                <p class="titulo-azul-tabla">Materiales necesarios</p>
+                
+                <div class="fila-resultado">
+                    <span>Superficie del techo</span>
+                    <strong id="res-superficie">0,00 m²</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Volumen del techo</span>
+                    <strong id="res-volumen">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Cemento</span>
+                    <strong id="res-cemento">0,0 kg</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Arena</span>
+                    <strong id="res-arena">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Piedra</span>
+                    <strong id="res-piedra">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Hierro 8 mm</span>
+                    <strong id="res-hierro8">0,0 m</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Hierro 6 mm</span>
+                    <strong id="res-hierro6">0,0 m</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- controlador logico -->
+    <script src="scrips/Script_CalTecho.js"></script>
+</body>
+</html>

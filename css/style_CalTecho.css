@@ -1,0 +1,140 @@
+/* Documento para el estilo del calculador de techos, David Lizcano Andrade */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: Bahnschrift, sans-serif;
+}
+
+/* barra azul: diseña el encabezado superior con el tono azul de la captura y alinea los elementos en fila */
+.barra-azul {
+    background-color: #007ba4;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* boton atras: quita la linea inferior del enlace y agranda la flecha para que se pueda pulsar bien */
+.btn-atras {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.btn-atras:hover {
+    color: blue;
+}
+
+/* icono encabezado: cambia el tamaño de la imagen del techo para que quede alineada junto al titulo */
+.icono-encabezado {
+    width: 45px;
+    height: 35px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.barra-azul h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/* contenedor calculo: separa la pantalla en dos columnas iguales usando una rejilla de css grid */
+.contenedor-calculo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* bloques de contenido: configura los titulos de las dos columnas en un tamaño grande y color oscuro */
+.bloque-datos h2, .bloque-resultados h2 {
+    font-size: 26px;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+/* etiqueta: controla el espacio de los textos que van arriba de los cuadros de entrada de texto */
+.etiqueta {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* input number: define el tamaño, bordes grises suaves y las esquinas redondeadas de las cajas de texto */
+input[type="number"] {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: Bahnschrift;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* btn calcular: estilo del boton azul para procesar los datos, incluye un cambio de color dinamico al pasar el mouse */
+.btn-calcular {
+    background-color: #007ba4;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-family: Bahnschrift;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.btn-calcular:hover {
+    background-color: #005f80;
+}
+
+/* tarjeta gris resultados: aplica un fondo gris claro con esquinas redondeadas pronunciadas para mostrar los datos */
+.tarjeta-gris-resultados {
+    background-color: #e5e7eb;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* titulo azul tabla: texto pequeño de color azul oscuro que sirve como encabezado de la lista de materiales */
+.titulo-azul-tabla {
+    color: #007ba4;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* fila resultado: crea una linea divisoria abajo de cada material y separa el nombre del numero hacia los extremos */
+.fila-resultado {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #c9cbcf;
+    font-size: 16px;
+    color: #4b5563;
+}
+
+/* last child: remueve la linea divisoria de la ultima fila para que el borde inferior no se vea duplicado */
+.fila-resultado:last-child {
+    border-bottom: none;
+}
+
+.fila-resultado strong {
+    color: #111827;
+}

@@ -1,0 +1,140 @@
+/* Documento para el estilo del calculador de vigas, David Lizcano Andrade */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: Bahnschrift, sans-serif;
+}
+
+/* barra cafe: define el color de fondo marron para el encabezado superior y ordena los elementos en linea horizontal */
+.barra-cafe {
+    background-color: #9c8470;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* boton atras: elimina la decoracion del link y aumenta su tamaño para facilitar la navegacion de regreso */
+.btn-atras {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.btn-atras:hover {
+    color: blue;
+}
+
+/* icono encabezado: ajusta la proporcion visual de la imagen de la viga al lado del titulo principal */
+.icono-encabezado {
+    width: 45px;
+    height: 35px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.barra-cafe h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/* contenedor calculo: utiliza css grid para generar una distribucion limpia de dos columnas en pantallas anchas */
+.contenedor-calculo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* bloques de contenido: asigna tamaños estables a los rotulos de datos de entrada y de salida */
+.bloque-datos h2, .bloque-resultados h2 {
+    font-size: 26px;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+/* etiqueta: genera un bloque de texto espaciado y destacado justo encima de la caja de captura numerica */
+.etiqueta {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    color: #374151;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* input number: define el ancho maximo, contornos grises delicados y fuente homogenea para el campo de texto */
+input[type="number"] {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: Bahnschrift;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* btn calcular: boton de ejecucion en tono marron con transicion suavizada al posicionar el puntero del mouse */
+.btn-calcular {
+    background-color: #9c8470;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-family: Bahnschrift;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.btn-calcular:hover {
+    background-color: #7e6754;
+}
+
+/* tarjeta gris resultados: genera el contenedor de fondo gris con esquinas curvas amplias para la visualizacion de datos */
+.tarjeta-gris-resultados {
+    background-color: #e5e7eb;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* titulo cafe tabla: etiqueta informativa de tamaño reducido en color marron que introduce la lista final */
+.titulo-cafe-tabla {
+    color: #9c8470;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* fila resultado: genera lineas horizontales de separacion intermedia y distribuye los textos a los extremos del bloque */
+.fila-resultado {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #c9cbcf;
+    font-size: 16px;
+    color: #4b5563;
+}
+
+/* last child: desactiva el filete divisorio de la ultima fila evitando duplicaciones visuales molestas */
+.fila-resultado:last-child {
+    border-bottom: none;
+}
+
+.fila-resultado strong {
+    color: #111827;
+}

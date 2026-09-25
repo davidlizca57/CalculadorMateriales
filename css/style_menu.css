@@ -28,7 +28,7 @@
 
 .panel-principal{
     background-color: #f3f4f6;
-    min-height: calc(100vh - 60px); /*Ocupar el resto de pantlla evitando el header*/
+    min-height: calc(100vh - 60px); /*Ocupar el resto de pantalla evitando el header*/
     padding: 40px;
     font-family: Bahnschrift;
 }
