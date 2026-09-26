@@ -28,8 +28,8 @@ body {
     font-weight: bold;
 }
 
-.btn-atras:hover {
-    color: #f3e8ff;
+.btn-atras:hover{
+    color: blue;
 }
 
 /* icono encabezado: cambia el tamaño de la imagen de la columna para que quede alineada junto al titulo */
