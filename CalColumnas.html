@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular columnas</title>
+    <link rel="stylesheet" href="css/style_CalColumnas.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="barra-morada">
+        <a href="menu.html" class="btn-atras">&#x2190;</a>
+        <img src="img/iconColumna.png" alt="Icono" class="icono-encabezado">
+        <h1>Calcular columnas</h1>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenedor-calculo">
+        
+        <!-- Formulario de datos -->
+        <section class="bloque-datos">
+            <h2>Datos de columnas</h2>
+            <form id="formulario-columnas">
+                <label class="etiqueta" for="ancho">Ancho sección (m)</label>
+                <input type="number" id="ancho" placeholder="0.00" step="0.01" required>
+
+                <label class="etiqueta" for="largo">Largo sección (m)</label>
+                <input type="number" id="largo" placeholder="0.00" step="0.01" required>
+
+                <label class="etiqueta" for="altura">Altura columna (m)</label>
+                <input type="number" id="altura" placeholder="0.00" step="0.01" required>
+
+                <label class="etiqueta" for="cantidad">Cantidad de columnas</label>
+                <input type="number" id="cantidad" placeholder="1" required>
+
+                <input type="submit" value="Calcular materiales" class="btn-calcular">
+            </form>
+        </section>
+
+        <!-- Resultados -->
+        <section class="bloque-resultados">
+            <h2>Resultados</h2>
+            <div class="tarjeta-gris-resultados">
+                <p class="titulo-morado-tabla">Materiales necesarios</p>
+                
+                <div class="fila-resultado">
+                    <span>Volumen total</span>
+                    <strong id="res-volumen">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Volumen con 5% extra</span>
+                    <strong id="res-extra">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Cemento (bultos)</span>
+                    <strong id="res-cemento">0 bultos</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Arena</span>
+                    <strong id="res-arena">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Triturado</span>
+                    <strong id="res-triturado">0,00 m³</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Código JavaScript para realizar los cálculos -->
+    <script>
+        document.getElementById('formulario-columnas').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // Obtener datos del formulario
+            const ancho = parseFloat(document.getElementById('ancho').value);
+            const largo = parseFloat(document.getElementById('largo').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            const cantidad = parseInt(document.getElementById('cantidad').value);
+
+            // Cálculos
+            const volumenTotal = ancho * largo * altura * cantidad;
+            const volumenExtra = volumenTotal * 1.05; // 5% extra por desperdicio
+
+            // Estimación para mezcla estándar (por cada m³ de hormigón aprox: 7 bultos cemento, 0.5 m³ arena, 0.8 m³ triturado)
+            const cemento = Math.ceil(volumenExtra * 7);
+            const arena = volumenExtra * 0.5;
+            const triturado = volumenExtra * 0.8;
+
+            // Mostrar resultados en la interfaz
+            document.getElementById('res-volumen').textContent = volumenTotal.toFixed(2) + ' m³';
+            document.getElementById('res-extra').textContent = volumenExtra.toFixed(2) + ' m³';
+            document.getElementById('res-cemento').textContent = cemento + ' bultos';
+            document.getElementById('res-arena').textContent = arena.toFixed(2) + ' m³';
+            document.getElementById('res-triturado').textContent = triturado.toFixed(2) + ' m³';
+        });
+    </script>
+
+</body>
+</html>

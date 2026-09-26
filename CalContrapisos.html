@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular contrapisos</title>
+    <!-- Enlace al archivo CSS en la carpeta css -->
+    <link rel="stylesheet" href="css/style_CalContrapisos.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="barra-morada">
+        <a href="menu.html" class="btn-atras">&#x2190;</a>
+        <img src="img/iconContrapiso.png" alt="Icono" class="icono-encabezado">
+        <h1>Calcular contrapisos</h1>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenedor-calculo">
+        
+        <!-- Formulario de datos -->
+        <section class="bloque-datos">
+            <h2>Datos de contrapiso</h2>
+            <form id="formulario-contrapisos">
+                <label class="etiqueta" for="ancho">Ancho (m)</label>
+                <input type="number" id="ancho" placeholder="0.00" step="0.01" required>
+
+                <label class="etiqueta" for="largo">Largo (m)</label>
+                <input type="number" id="largo" placeholder="0.00" step="0.01" required>
+
+                <label class="etiqueta" for="espesor">Espesor / Espesor de capa (m)</label>
+                <input type="number" id="espesor" placeholder="0.10" step="0.01" required>
+
+                <input type="submit" value="Calcular materiales" class="btn-calcular">
+            </form>
+        </section>
+
+        <!-- Resultados -->
+        <section class="bloque-resultados">
+            <h2>Resultados</h2>
+            <div class="tarjeta-gris-resultados">
+                <p class="titulo-morado-tabla">Materiales necesarios</p>
+                
+                <div class="fila-resultado">
+                    <span>Superficie del contrapiso</span>
+                    <strong id="res-superficie">0,00 m²</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Volumen necesario</span>
+                    <strong id="res-volumen">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Volumen con 10% extra</span>
+                    <strong id="res-extra">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Cemento (bultos)</span>
+                    <strong id="res-cemento">0 bultos</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Arena</span>
+                    <strong id="res-arena">0,00 m³</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Triturado / Cascote</span>
+                    <strong id="res-triturado">0,00 m³</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+<script>
+        document.getElementById('formulario-contrapisos').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // Obtener datos del formulario
+            const ancho = parseFloat(document.getElementById('ancho').value);
+            const largo = parseFloat(document.getElementById('largo').value);
+            const espesor = parseFloat(document.getElementById('espesor').value);
+
+            // Cálculos
+            const superficie = ancho * largo;
+            const volumen = superficie * espesor;
+            const volumenExtra = volumen * 1.10; // 10% extra
+
+            // Dosificación promedio para contrapisos (por m³: ~5 bultos cemento, 0.45 m³ arena, 0.9 m³ cascote/triturado)
+            const cemento = Math.ceil(volumenExtra * 5);
+            const arena = volumenExtra * 0.45;
+            const triturado = volumenExtra * 0.9;
+
+            // Mostrar resultados en la interfaz
+            document.getElementById('res-superficie').textContent = superficie.toFixed(2) + ' m²';
+            document.getElementById('res-volumen').textContent = volumen.toFixed(2) + ' m³';
+            document.getElementById('res-extra').textContent = volumenExtra.toFixed(2) + ' m³';
+            document.getElementById('res-cemento').textContent = cemento + ' bultos';
+            document.getElementById('res-arena').textContent = arena.toFixed(2) + ' m³';
+            document.getElementById('res-triturado').textContent = triturado.toFixed(2) + ' m³';
+        });
+    </script>
+</body>
+</html>

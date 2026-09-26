@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular pintura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="barra-morada">
+        <a href="menu.html" class="btn-atras">&#x2190;</a>
+        <img src="img/iconPiso.png" alt="Icono" class="icono-encabezado">
+        <h1>Calcular pintura</h1>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenedor-calculo">
+        
+        <!-- Formulario de datos -->
+        <section class="bloque-datos">
+            <h2>Datos de pintura</h2>
+            <form id="formulario-pintura">
+                <label class="etiqueta" for="ancho">Ancho de la pared (m)</label>
+                <input type="number" id="ancho" placeholder="0.00" step="0.01" required>
+
+                <label class="etiqueta" for="alto">Alto de la pared (m)</label>
+                <input type="number" id="alto" placeholder="0.00" step="0.01" required>
+
+                <label class="etiqueta" for="manos">Número de manos / capas</label>
+                <input type="number" id="manos" placeholder="2" value="2" required>
+
+                <label class="etiqueta" for="rendimiento">Rendimiento (m²/galón)</label>
+                <input type="number" id="rendimiento" placeholder="30.00" value="30" step="0.1" required>
+
+                <input type="submit" value="Calcular materiales" class="btn-calcular">
+            </form>
+        </section>
+
+        <!-- Resultados -->
+        <section class="bloque-resultados">
+            <h2>Resultados</h2>
+            <div class="tarjeta-gris-resultados">
+                <p class="titulo-morado-tabla">Materiales necesarios</p>
+                
+                <div class="fila-resultado">
+                    <span>Superficie total</span>
+                    <strong id="res-superficie">0,00 m²</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Superficie con 10% extra</span>
+                    <strong id="res-extra">0,00 m²</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Litros de pintura</span>
+                    <strong id="res-litros">0,00 L</strong>
+                </div>
+                <div class="fila-resultado">
+                    <span>Galones de pintura</span>
+                    <strong id="res-galones">0,00 gal</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Código JavaScript para realizar los cálculos -->
+    <script>
+        document.getElementById('formulario-pintura').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // Obtener datos del formulario
+            const ancho = parseFloat(document.getElementById('ancho').value);
+            const alto = parseFloat(document.getElementById('alto').value);
+            const manos = parseInt(document.getElementById('manos').value);
+            const rendimiento = parseFloat(document.getElementById('rendimiento').value);
+
+            // Cálculos
+            const superficieBase = ancho * alto;
+            const superficieTotal = superficieBase * manos;
+            const superficieExtra = superficieTotal * 1.10; // 10% extra
+
+            const galones = superficieExtra / rendimiento;
+            const litros = galones * 3.78541; // 1 galón = 3.78541 litros
+
+            // Mostrar resultados en la interfaz
+            document.getElementById('res-superficie').textContent = superficieBase.toFixed(2) + ' m²';
+            document.getElementById('res-extra').textContent = superficieExtra.toFixed(2) + ' m²';
+            document.getElementById('res-litros').textContent = litros.toFixed(2) + ' L';
+            document.getElementById('res-galones').textContent = galones.toFixed(2) + ' gal';
+        });
+    </script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* Documento para el estilo del calculador de techos, Mariana Perdomo Gonzalez */
+/* Documento para el estilo del calculador de contrapisos, Angel David Plazas Borda */
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +10,9 @@ body {
     font-family: Bahnschrift, sans-serif;
 }
 
-/* barra azul: diseña el encabezado superior con el tono azul de la captura y alinea los elementos en fila */
-.barra-azul {
-    background-color: #007ba4;
+/* barra morada: diseña el encabezado superior con el tono morado de la captura y alinea los elementos en fila */
+.barra-morada {
+    background-color: #31c738;
     color: white;
     padding: 15px 30px;
     display: flex;
@@ -29,10 +29,10 @@ body {
 }
 
 .btn-atras:hover {
-    color: blue;
+    color: #f3e8ff;
 }
 
-/* icono encabezado: cambia el tamaño de la imagen del techo para que quede alineada junto al titulo */
+/* icono encabezado: cambia el tamaño de la imagen del contrapiso para que quede alineada junto al titulo */
 .icono-encabezado {
     width: 45px;
     height: 35px;
@@ -42,12 +42,12 @@ body {
     padding: 2px;
 }
 
-.barra-azul h1 {
+.barra-morada h1 {
     font-size: 24px;
     font-weight: normal;
 }
 
-/* contenedor calculo: separa la pantalla en dos columnas iguales usando una rejilla de css grid */
+/* contenedor calculo: separa la pantalla en dos columnas usando una rejilla de css grid */
 .contenedor-calculo {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -84,12 +84,12 @@ input[type="number"] {
     font-family: Bahnschrift;
     font-size: 16px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-/* btn calcular: estilo del boton azul para procesar los datos, incluye un cambio de color dinamico al pasar el mouse */
+/* btn calcular: estilo del boton morado para procesar los datos, incluye un cambio de color dinamico al pasar el mouse */
 .btn-calcular {
-    background-color: #007ba4;
+    background-color: #31c738;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -102,7 +102,7 @@ input[type="number"] {
 }
 
 .btn-calcular:hover {
-    background-color: #005f80;
+    background-color: #31c738;
 }
 
 /* tarjeta gris resultados: aplica un fondo gris claro con esquinas redondeadas pronunciadas para mostrar los datos */
@@ -112,9 +112,9 @@ input[type="number"] {
     padding: 30px;
 }
 
-/* titulo azul tabla: texto pequeño de color azul oscuro que sirve como encabezado de la lista de materiales */
-.titulo-azul-tabla {
-    color: #007ba4;
+/* titulo morado tabla: texto pequeño de color morado que sirve como encabezado de la lista de materiales */
+.titulo-morado-tabla {
+    color: #31c738;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 20px;
