@@ -34,11 +34,33 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Inyectar de manera ordenada los resultados en las etiquetas del HTML
-            // .toFixed() sirve para limitar la cantidad de decimales en pantalla
             document.getElementById('res-superficie').innerText = superficie.toFixed(2).replace('.', ',') + " m²";
             document.getElementById('res-cemento').innerText = cementoTotal.toFixed(1).replace('.', ',') + " kg";
             document.getElementById('res-arena').innerText = arenaTotal.toFixed(3).replace('.', ',') + " m³";
             document.getElementById('res-ladrillos').innerText = Math.round(ladrillosTotal).toLocaleString() + " unidades";
+
+            
+            // Creamos un texto descriptivo ordenado con los resultados para guardarlo en la BD
+            var resumenDetalle = "Espesor: " + espesorOpcion + "cm, Largo: " + largo + "m, Alto: " + alto + "m. Resultados: Superficie: " + superficie.toFixed(2) + "m², Cemento: " + cementoTotal.toFixed(1) + "kg, Arena: " + arenaTotal.toFixed(3) + "m³, Ladrillos: " + Math.round(ladrillosTotal) + " un.";
+
+            // Enviamos el registro a la ruta correspondiente en Python
+            fetch('http://127.0.0', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    tipo: "Muro de ladrillo",
+                    detalle: resumenDetalle
+                })
+            })
+            .then(function(respuesta) {
+                console.log("Cálculo de muro respaldado con éxito en la base de datos.");
+            })
+            .catch(function(error) {
+                console.log("No se pudo conectar con el servidor para guardar el historial.");
+            });
         });
     }
 });

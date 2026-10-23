@@ -1,40 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
     var formRecovery = document.querySelector('.Recovery form');
-    var contenedorAlerta = document.getElementById('mensaje-alerta');
 
     if (formRecovery) {
         formRecovery.addEventListener('submit', function (e) {
-            // Evita que la pagina se recargue antes de hacer la comprobacion
             e.preventDefault(); 
 
-            // Recoger el correo que escribio el usuario en el campo de texto
             var emailIngresado = document.getElementById('email').value;
 
-            // Traer el correo y la contraseña que se guardaron en la pagina de registro
-            var correoGuardado = localStorage.getItem('guardar_correo');
-            var claveGuardada = localStorage.getItem('guardar_clave');
+            // Le pedimos al usuario que escriba su nueva contraseña de forma sencilla
+            var nuevaClave = prompt("Ingrese su nueva contraseña (mínimo 8 caracteres):");
 
-            // Ocultar cualquier mensaje previo
-            contenedorAlerta.style.display = "none";
-
-            // Verificar si el correo ingresado es igual al que esta registrado
-            if (emailIngresado === correoGuardado) {
-                // Mensaje de exito indicando la contraseña encontrada (Simulacion)
-                contenedorAlerta.innerText = "Correo verificado. Su contraseña es: " + claveGuardada + ". Redirigiendo al inicio de sesion...";
-                contenedorAlerta.style.color = "green";
-                contenedorAlerta.style.display = "block";
-
-                // Esperar 3 segundos para que el usuario lea su clave y luego enviarlo al index.html
-                setTimeout(function () {
-                    window.location.href = "index.html";
-                }, 3000);
-
-            } else {
-                // Mensaje de error si el correo no existe en la memoria
-                contenedorAlerta.innerText = "El correo ingresado no coincide con ningun usuario registrado.";
-                contenedorAlerta.style.color = "red";
-                contenedorAlerta.style.display = "block";
+            // Si el usuario cancela o lo deja vacío, no hace nada
+            if (!nuevaClave || nuevaClave.length < 8) {
+                alert("Operación cancelada o contraseña demasiado corta.");
+                return;
             }
+
+            // Enviar la nueva contraseña al servidor de Python
+            fetch('http://127.0.0.1:5000/api/recuperar', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    correo: emailIngresado,
+                    nueva_clave: nuevaClave
+                })
+            })
+            .then(function(respuesta) {
+                if (respuesta.ok) {
+                    alert("Contraseña actualizada con éxito en la base de datos.");
+                    // Lo regresa al login para que entre con su nueva clave
+                    window.location.href = "index.html";
+                } else {
+                    alert("El correo ingresado no coincide con ningún usuario registrado.");
+                }
+            })
+            .catch(function(error) {
+                alert("Error al conectar con el servidor backend.");
+            });
         });
     }
 });

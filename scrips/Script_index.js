@@ -14,36 +14,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 2. LOGICA PARA ENTRAR AL SISTEMA
+    // 2. LOGICA PARA CONECTAR EL INICIO DE SESION CON PYTHON
     if (formLogin) {
         formLogin.addEventListener('submit', function (e) {
-            // Evita que la pagina cargue antes de verificar los datos
             e.preventDefault(); 
 
-            // Recoger lo que escribio el usuario en la pantalla de ingreso
             var usuarioIngresado = document.getElementById('usuario').value;
             var claveIngresada = document.getElementById('password').value;
 
-            // Traer los datos que se guardaron en la pagina de registro
-            var usuarioGuardado = localStorage.getItem('guardar_usuario');
-            var correoGuardado = localStorage.getItem('guardar_correo');
-            var claveGuardada = localStorage.getItem('guardar_clave');
-
-            // Verificar si hay algun usuario guardado en la memoria
-            if (!usuarioGuardado) {
-                alert("No hay ningun usuario registrado en este navegador. Por favor registrese primero.");
-                return;
-            }
-
-            // Comprobar si el dato ingresado coincide con el usuario o con el correo, y si la clave es correcta
-            if ((usuarioIngresado === usuarioGuardado || usuarioIngresado === correoGuardado) && claveIngresada === claveGuardada) {
-                alert("Inicio de sesion exitoso. Bienvenido.");
-                
-                // Llevar al usuario a la pagina del menu
-                window.location.href = "menu.html";
-            } else {
-                alert("Datos incorrectos. Verifique su usuario o contraseña.");
-            }
+            // Enviar los datos ingresados al servidor de Python para verificar si existen
+            fetch('http://127.0.0.1:5000/api/login', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    usuario: usuarioIngresado,
+                    clave: claveIngresada
+                })
+            })
+            .then(function(respuesta) {
+                if (respuesta.ok) {
+                    alert("Inicio de sesión exitoso. Bienvenido.");
+                    // Si los datos son correctos, te deja pasar al Menu Principal
+                    window.location.href = "menu.html";
+                } else {
+                    alert("Datos incorrectos. Verifique su usuario o contraseña.");
+                }
+            })
+            .catch(function(error) {
+                alert("Error al conectar con el servidor backend.");
+            });
         });
     }
 });
